@@ -17,47 +17,135 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Home")),
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text("Home",
+        style: TextStyle(
+          color: Colors.white
+        ),),
+        ),
       drawer: Drawer(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
               accountName: Text("Farook"), 
-              accountEmail: Text("Farook@gmail.com"))
+              accountEmail: Text("Farook@gmail.com")),
+            
+            // Account button
+            TextButton(
+              onPressed: () {
+              },
+              child: const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Account",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+              ),
+            ),
+
+            // Orders button
+            TextButton(
+              onPressed: () {
+              },
+              child: const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Your Orders",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+              ),
+            ),
+
+             // Cart button
+            TextButton(
+              onPressed: () {
+              },
+              child: const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Cart",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+              ),
+            ),
+
+             // About Us button
+            TextButton(
+              onPressed: () {
+              },
+              child: const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "About Us",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+              ),
+            ),
+
+             // Contact Us button
+            TextButton(
+              onPressed: () {
+              },
+              child: const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Contact Us",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+              ),
+            ),
+
+             // Logout button
+            TextButton(
+              onPressed: () {
+              },
+              child: const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Logout",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+              ),
+            ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: "Home",
-          backgroundColor: Colors.blue),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
-            backgroundColor: Colors.blue,
-          ),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
-            backgroundColor: Colors.blue,
-          ),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
-            backgroundColor: Colors.blue,
-          ),
-      ],
-      currentIndex: 0,
-      ),
       body: Center(
-      //   child: ElevatedButton(onPressed: () {
-      //       Navigator.pushReplacementNamed(context, '/login');
-      //     }, child: const Text("Logout"),
-      // ),
-      child: Text(controller.data)
-    )
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: (){}, 
+                  child: const Text(
+                    "fish",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    )
+                  ),
+                TextButton(
+                  onPressed: (){}, 
+                  child: const Text("food",
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                  )
+                  )
+              ],
+            )
+          ],
+        ),
+    ),
+
+    //floating cart icon
+    floatingActionButton: FloatingActionButton(
+      backgroundColor: Colors.black,
+      onPressed: (){},
+      child: IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart, color: Colors.white, size: 50),
+      ),
+      ),
     );
   }
 }
