@@ -1,4 +1,5 @@
 import 'package:aquafin_frontend/controllers/home_controller.dart';
+import 'package:aquafin_frontend/views/fish_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -121,14 +122,18 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+                    Get.off(() => FishScreen());
+                  }, 
                   child: const Text(
                     "fish",
                     style: TextStyle(color: Colors.white, fontSize: 25),
                     )
                   ),
                 TextButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+                    
+                  }, 
                   child: const Text("food",
                   style: TextStyle(color: Colors.white, fontSize: 25),
                   )
