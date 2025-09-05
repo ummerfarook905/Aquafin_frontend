@@ -34,9 +34,9 @@ class FishScreen extends StatelessWidget {
                   mainAxisSpacing: 16,
                   childAspectRatio: 1,
                    ),
-                   itemCount: controller.fish.length, 
+                   itemCount: controller.categories.length, 
                 itemBuilder: (context, index) {
-                  final category = controller.fish[index];
+                  final category = controller.categories[index];
                   return Column(
                     children: [
                       Expanded(
