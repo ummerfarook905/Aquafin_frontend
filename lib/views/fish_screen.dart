@@ -16,7 +16,7 @@ class FishScreen extends StatelessWidget {
       body: Column(
         children: [
           const Text(
-            "CAtegory",
+            "Category",
             style: TextStyle(
               color: Colors.white,
               fontSize: 22,
@@ -50,7 +50,7 @@ class FishScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          category.name,
+                          "${category.name}",
                           style: const TextStyle(color: Colors.white, fontSize: 14),
                         )
                     ],

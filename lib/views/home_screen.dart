@@ -1,4 +1,5 @@
 import 'package:aquafin_frontend/controllers/home_controller.dart';
+import 'package:aquafin_frontend/views/contact_screen.dart';
 import 'package:aquafin_frontend/views/fish_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -89,6 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
              // Contact Us button
             TextButton(
               onPressed: () {
+                Get.off(ContactScreen());
               },
               child: const Align(
                 alignment: Alignment.center,
