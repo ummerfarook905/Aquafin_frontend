@@ -1,5 +1,4 @@
 import 'package:aquafin_frontend/controllers/home_controller.dart';
-import 'package:aquafin_frontend/views/contact_screen.dart';
 import 'package:aquafin_frontend/views/fish_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,7 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("Home",
         style: TextStyle(
           color: Colors.white
-        ),),
+        ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.white
+        ),
         ),
       drawer: Drawer(
         backgroundColor: Colors.white,
@@ -38,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // Account button
             TextButton(
               onPressed: () {
+                Get.toNamed('/account');
               },
               child: const Align(
                 alignment: Alignment.center,
@@ -90,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
              // Contact Us button
             TextButton(
               onPressed: () {
-                Get.off(ContactScreen());
+                Get.toNamed('/contact');
               },
               child: const Align(
                 alignment: Alignment.center,
