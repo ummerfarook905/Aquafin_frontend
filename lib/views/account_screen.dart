@@ -16,7 +16,9 @@ class AccountScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextButton(
-              onPressed: (){}, 
+              onPressed: (){
+                Get.toNamed('/profile');
+              }, 
               child: const Text("Profile",
               style: TextStyle(
                 color: Colors.white,

@@ -3,6 +3,7 @@ import 'package:aquafin_frontend/views/contact_screen.dart';
 import 'package:aquafin_frontend/views/fish_screen.dart';
 import 'package:aquafin_frontend/views/home_screen.dart';
 import 'package:aquafin_frontend/views/login_screen.dart';
+import 'package:aquafin_frontend/views/profile_screen.dart';
 import 'package:aquafin_frontend/views/signup_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -16,5 +17,6 @@ class AppRoutes {
     GetPage(name: '/fish', page: () => FishScreen()),
     GetPage(name: '/contact', page: () => ContactScreen()),
     GetPage(name: '/account', page: () => AccountScreen()),
+    GetPage(name: '/profile', page: () => ProfileScreen()),
   ];
 }
