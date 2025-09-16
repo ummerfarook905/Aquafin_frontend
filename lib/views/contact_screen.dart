@@ -1,5 +1,5 @@
 import 'package:aquafin_frontend/controllers/contact_controller.dart';
-import 'package:aquafin_frontend/views/home_screen.dart';
+import 'package:aquafin_frontend/widgets/common_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +12,7 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: const CommonAppbar(title: "Contact Us"),
       body: Obx(() {
         final contact = controller.contact.value;
 
@@ -61,20 +62,6 @@ class ContactScreen extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.bold),
-                ),
-                const Spacer(),
-          
-                Align(
-                  alignment: Alignment.centerLeft, // ⬅ moves to left
-                  child: TextButton(
-                    onPressed: () {
-                      Get.offAll(() => HomeScreen());
-                    },
-                    child: const Text(
-                      "Back",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  ),
                 ),
               ],
             ),

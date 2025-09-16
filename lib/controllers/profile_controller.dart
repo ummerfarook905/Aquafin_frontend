@@ -4,8 +4,13 @@ import 'package:get/get.dart';
 class ProfileController extends GetxController{
   var user = Rx<UsersModel?>(null);
 
+   @override
+  void onInit() {
+    super.onInit();
+    fetchUserProfile();
+  }
+
   Future<void> fetchUserProfile() async {
-    await Future.delayed(const Duration(seconds: 2)); // fake API delay
 
     user.value = UsersModel(
       name: "Fahad",
@@ -13,11 +18,5 @@ class ProfileController extends GetxController{
       email: "fahad12@gmail.com",
       dob: "08/04/1995",
     );
-
-    @override
-  void onInit() {
-    super.onInit();
-    fetchUserProfile();
-  }
  }
 }

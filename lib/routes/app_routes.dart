@@ -1,4 +1,5 @@
 import 'package:aquafin_frontend/views/account_screen.dart';
+import 'package:aquafin_frontend/views/address_screen.dart';
 import 'package:aquafin_frontend/views/contact_screen.dart';
 import 'package:aquafin_frontend/views/fish_screen.dart';
 import 'package:aquafin_frontend/views/home_screen.dart';
@@ -18,5 +19,6 @@ class AppRoutes {
     GetPage(name: '/contact', page: () => ContactScreen()),
     GetPage(name: '/account', page: () => AccountScreen()),
     GetPage(name: '/profile', page: () => ProfileScreen()),
+    GetPage(name: '/address', page: () => AddressScreen()),
   ];
 }

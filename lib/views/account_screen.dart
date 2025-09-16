@@ -1,5 +1,5 @@
 
-import 'package:aquafin_frontend/views/home_screen.dart';
+import 'package:aquafin_frontend/widgets/common_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +10,7 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: const CommonAppbar(title: "Account"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +28,9 @@ class AccountScreen extends StatelessWidget {
               ),
               ),
             TextButton(
-              onPressed: (){}, 
+              onPressed: (){
+                Get.toNamed('/address');
+              }, 
               child: Text(
                 "Address",
                 style: TextStyle(
@@ -46,20 +49,6 @@ class AccountScreen extends StatelessWidget {
                 ),
               )
               ),
-
-          
-                Align(
-                  alignment: Alignment.centerLeft, // ⬅ moves to left
-                  child: TextButton(
-                    onPressed: () {
-                      Get.offAll(() => HomeScreen());
-                    },
-                    child: const Text(
-                      "Back",
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                  ),
-                ),
           ],
         ),
       ),
