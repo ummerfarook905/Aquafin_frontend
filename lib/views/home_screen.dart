@@ -1,7 +1,6 @@
-import 'package:aquafin_frontend/controllers/home_controller.dart';
-import 'package:aquafin_frontend/views/fish_screen.dart';
+
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 
 
 class HomeScreen extends StatefulWidget {
@@ -12,151 +11,35 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-  final HomeController controller = Get.put(HomeController());
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text("Home",
-        style: TextStyle(
-          color: Colors.white
-        ),
-        ),
-        iconTheme: const IconThemeData(
-          color: Colors.white
-        ),
-        ),
-      drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: ListView(
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: Text("Farook"), 
-              accountEmail: Text("Farook@gmail.com")),
-            
-            // Account button
-            TextButton(
-              onPressed: () {
-                Get.toNamed('/account');
-              },
-              child: const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Account",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
-              ),
-            ),
-
-            // Orders button
-            TextButton(
-              onPressed: () {
-              },
-              child: const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Your Orders",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
-              ),
-            ),
-
-             // Cart button
-            TextButton(
-              onPressed: () {
-              },
-              child: const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Cart",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
-              ),
-            ),
-
-             // About Us button
-            TextButton(
-              onPressed: () {
-              },
-              child: const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "About Us",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
-              ),
-            ),
-
-             // Contact Us button
-            TextButton(
-              onPressed: () {
-                Get.toNamed('/contact');
-              },
-              child: const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Contact Us",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
-              ),
-            ),
-
-             // Logout button
-            TextButton(
-              onPressed: () {
-              },
-              child: const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Logout",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      backgroundColor: Colors.blue[50],
       body: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: (){
-                    Get.off(() => FishScreen());
-                  }, 
-                  child: const Text(
-                    "fish",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                    )
-                  ),
-                TextButton(
-                  onPressed: (){
-                    
-                  }, 
-                  child: const Text("food",
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                  )
-                  )
-              ],
-            )
-          ],
-        ),
-    ),
+        child: Container(
+          width: 280,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(color: Colors.black26, blurRadius: 8, offset: Offset(0, 4))
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset("assets/360_F_714796903_IN2WlLEghO5wVtMnyoDysOCN2ttqFOJi.png", height: 150),
+              const SizedBox(height: 150)
+            ],
 
-    //floating cart icon
-    floatingActionButton: FloatingActionButton(
-      backgroundColor: Colors.black,
-      onPressed: (){},
-      child: IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart, color: Colors.white, size: 50),
+          ),
+
+        ),
       ),
-      ),
+
     );
+
   }
 }

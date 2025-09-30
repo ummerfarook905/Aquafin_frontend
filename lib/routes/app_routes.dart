@@ -9,7 +9,7 @@ import 'package:aquafin_frontend/views/signup_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoutes {
-  static const String initial = '/login';
+  static const String initial = '/home';
 
   static final List<GetPage> routes = [
     GetPage(name: '/login', page: () => LoginScreen()),
