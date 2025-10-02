@@ -1,6 +1,7 @@
 import 'package:aquafin_frontend/controllers/signup_controller.dart';
 import 'package:aquafin_frontend/models/signup_model.dart';
 import 'package:aquafin_frontend/views/login_screen.dart';
+import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,16 +21,15 @@ class _SignupScreenState extends State<SignupScreen> {
   final SignupController signupController = Get.put(SignupController());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
+    return GradientScaffold(
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Sign-up",
-                style: TextStyle(color: Colors.white, fontSize: 22),
+                "Create an account",
+                style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
 
@@ -38,13 +38,13 @@ class _SignupScreenState extends State<SignupScreen> {
                 margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                 child: TextField(
                   controller: nameController,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.person, color: Colors.white),
+                    prefixIcon: const Icon(Icons.person, color: Colors.black),
                     hintText: "name",
-                    hintStyle: const TextStyle(color: Colors.white54),
+                    hintStyle: const TextStyle(color: Colors.grey),
                     filled: true,
-                    fillColor: Colors.grey[900],
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -59,11 +59,11 @@ class _SignupScreenState extends State<SignupScreen> {
                   controller: usernameController,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.person, color: Colors.white),
+                    prefixIcon: const Icon(Icons.person, color: Colors.black),
                     hintText: "username",
-                    hintStyle: const TextStyle(color: Colors.white54),
+                    hintStyle: const TextStyle(color: Colors.grey),
                     filled: true,
-                    fillColor: Colors.grey[900],
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -77,13 +77,13 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: TextField(
                   controller: passwordController,
                   obscureText: true,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.lock, color: Colors.white),
+                    prefixIcon: const Icon(Icons.lock, color: Colors.black),
                     hintText: "password",
-                    hintStyle: const TextStyle(color: Colors.white54),
+                    hintStyle: const TextStyle(color: Colors.grey),
                     filled: true,
-                    fillColor: Colors.grey[900],
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -97,13 +97,13 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: TextField(
                   controller: emailController,
                   obscureText: true,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.email, color: Colors.white),
+                    prefixIcon: const Icon(Icons.email, color: Colors.black),
                     hintText: "email",
-                    hintStyle: const TextStyle(color: Colors.white54),
+                    hintStyle: const TextStyle(color: Colors.grey),
                     filled: true,
-                    fillColor: Colors.grey[900],
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12)
                     )
@@ -112,7 +112,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.blue,
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
                 ),
                 onPressed: () {
@@ -138,7 +138,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         colorText: Colors.white);
                   }
                 }, 
-                child: const Text("Sign Up"),
+                child: const Text("Sign Up",style: TextStyle(color: Colors.white),),
                 ),
                 const SizedBox(height: 20),
               
@@ -148,7 +148,7 @@ class _SignupScreenState extends State<SignupScreen> {
               }, 
               child: const Text(
                   "Already have an account? Login",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.black),
                 ),
                 )
             ],

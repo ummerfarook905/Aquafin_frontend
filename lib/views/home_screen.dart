@@ -1,44 +1,73 @@
 
+import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blue[50],
-      body: Center(
-        child: Container(
-          width: 280,
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(color: Colors.black26, blurRadius: 8, offset: Offset(0, 4))
-            ],
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset("assets/360_F_714796903_IN2WlLEghO5wVtMnyoDysOCN2ttqFOJi.png", height: 150),
-              const SizedBox(height: 150)
-            ],
-
+    return GradientScaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // Example Image
+          Expanded(
+            flex: 5,
+            child: Center(
+              child: Image.asset(
+                "assets/360_F_714796903_IN2WlLEghO5wVtMnyoDysOCN2ttqFOJi.png",
+                width: 250,
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
 
-        ),
+          // Register Button
+          Expanded(
+            flex: 3,
+            child: Column(
+              children: [
+                SizedBox(
+                  width: 220,
+                  height: 48,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    onPressed: () {
+                      Get.toNamed('/signup');
+                    },
+                    child: const Text(
+                      "REGISTER",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                TextButton(
+                  onPressed: (){
+                    Get.toNamed('/login');
+                  }, 
+                  child: Text("Already have a account login")),
+                const SizedBox(height: 30),
+              ],
+            ),
+          ),
+        ],
       ),
-
+      
     );
 
   }

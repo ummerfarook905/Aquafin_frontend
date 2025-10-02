@@ -2,6 +2,7 @@ import 'package:aquafin_frontend/controllers/auth_controller.dart';
 import 'package:aquafin_frontend/models/user_model.dart';
 import 'package:aquafin_frontend/views/home_screen.dart';
 import 'package:aquafin_frontend/views/signup_screen.dart';
+import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,8 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
+    return GradientScaffold(
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
                // Title
               const Text(
                 "Sign-in",
-                style: TextStyle(color: Colors.white, fontSize: 22),
+                style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
 
@@ -44,13 +44,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                 child: TextField(
                   controller: usernameController,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.person, color: Colors.white),
+                    prefixIcon: const Icon(Icons.person, color: Colors.black),
                     hintText: "username",
-                    hintStyle: const TextStyle(color: Colors.white54),
+                    hintStyle: const TextStyle(color: Colors.grey),
                     filled: true,
-                    fillColor: Colors.grey[900],
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     )
@@ -64,13 +64,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextField(
                   controller: passwordController,
                   obscureText: true,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.lock, color: Colors.white),
+                    prefixIcon: const Icon(Icons.lock, color: Colors.black),
                     hintText: "password",
-                    hintStyle: const TextStyle(color: Colors.white54),
+                    hintStyle: const TextStyle(color: Colors.grey),
                     filled: true,
-                    fillColor: Colors.grey[900],
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //Login Button
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.blue,
                   padding:
                    const EdgeInsets.symmetric(horizontal: 40,vertical: 12) 
                 ),
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
 
                 }, 
-                child: const Text("Sign-in"),
+                child: const Text("Sign-in", style: TextStyle(color: Colors.white),),
                 ),
                 const SizedBox(height: 20),
               
@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 }, 
                 child: const Text(
                   "Don't have an account? Sign Up",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.black),
                 ))
             ],
           ),
