@@ -1,6 +1,6 @@
 import 'package:aquafin_frontend/controllers/auth_controller.dart';
 import 'package:aquafin_frontend/models/user_model.dart';
-import 'package:aquafin_frontend/views/home_screen.dart';
+import 'package:aquafin_frontend/views/product_screen.dart';
 import 'package:aquafin_frontend/views/signup_screen.dart';
 import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   bool success = authController.login(user);
 
                  if (success) {
-                    Get.off(() => const HomeScreen()); // ✅ Navigate with GetX
+                    Get.to(() =>  ProductScreen());// ✅ Navigate with GetX
                     Get.snackbar("Success", "Login Successful",
                         backgroundColor: Colors.green,
                         colorText: Colors.white);
