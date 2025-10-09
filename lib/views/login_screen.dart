@@ -1,7 +1,6 @@
 import 'package:aquafin_frontend/controllers/auth_controller.dart';
 import 'package:aquafin_frontend/models/user_model.dart';
 import 'package:aquafin_frontend/views/main_screen.dart';
-import 'package:aquafin_frontend/views/product_screen.dart';
 import 'package:aquafin_frontend/views/signup_screen.dart';
 import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:flutter/material.dart';

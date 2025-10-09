@@ -36,16 +36,16 @@ class ProductScreen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text("All Featured", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                Icon(Icons.sort),
-              ],
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: const [
+          //       Text("All Featured", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          //       Icon(Icons.sort),
+          //     ],
+          //   ),
+          // ),
 
           Expanded(
             child: GridView.builder(

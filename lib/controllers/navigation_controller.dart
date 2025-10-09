@@ -12,6 +12,14 @@ class NavigationController extends GetxController {
     WishlistScreen(),
   ];
 
+  final pageTitles = [
+    "Home",
+    "Cart",
+    "Orders",
+    "Profile",
+    "Settings",
+  ];
+
   void changeTab(int index) {
     selectedIndex.value = index;
   }
