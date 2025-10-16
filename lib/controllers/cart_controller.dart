@@ -11,12 +11,12 @@ class CartController extends GetxController {
     items.value = [
       CartModel(
         name: "Fish Tank Mini Aquarium",
-        imageUrl: "https://example.com/aquarium.jpg",
+        imageUrl: "assets/downloads1.png",
         price: 7899,
       ),
       CartModel(
         name: "Betta Japan",
-        imageUrl: "https://example.com/betta.jpg",
+        imageUrl: "assets/downloads.png",
         price: 3299,
       ),
     ];

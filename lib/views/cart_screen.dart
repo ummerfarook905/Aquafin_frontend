@@ -12,6 +12,24 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GradientScaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            Get.back(); // ✅ GetX back navigation
+          },
+        ),
+        title: const Text(
+          "My Cart",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: Column(
         children: [
           Container(
