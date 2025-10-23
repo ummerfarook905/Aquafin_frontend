@@ -1,5 +1,6 @@
 import 'package:aquafin_frontend/controllers/profile_controller.dart';
 import 'package:aquafin_frontend/widgets/common_appbar.dart';
+import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,8 +10,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ProfileController controller = Get.put(ProfileController());
-    return Scaffold(
-      backgroundColor: Colors.black,
+    return GradientScaffold(
       appBar: const CommonAppbar(title: "Profile"),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -59,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: Colors.white70,
+              color: Colors.black,
               fontSize: 16,
               fontWeight: FontWeight.w500,
             ),
@@ -68,7 +68,7 @@ class ProfileScreen extends StatelessWidget {
           Text(
             value,
             style: const TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

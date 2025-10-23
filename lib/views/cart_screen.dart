@@ -93,7 +93,28 @@ class CartScreen extends StatelessWidget {
             )
               
             ),
-          )
+          ),
+          SizedBox(height: 10),
+
+          SizedBox(
+            width: double.infinity,
+            height: 50,
+            child: ElevatedButton(
+              onPressed: (){}, 
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueAccent,
+              ),
+              child: const Text(
+                "Proceeded to payment",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                )),
+          ),
+
+          SizedBox(height: 10)
         ],
       ),
       );
