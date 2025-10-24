@@ -1,4 +1,5 @@
 import 'package:aquafin_frontend/views/cart_screen.dart';
+import 'package:aquafin_frontend/views/order_screen.dart';
 import 'package:aquafin_frontend/views/product_screen.dart';
 import 'package:aquafin_frontend/views/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,6 +12,7 @@ class NavigationController extends GetxController {
   final List<Widget> pages = [
     ProductScreen(),
     CartScreen(),
+    OrderScreen(),
     ProfileScreen(),
   ];
 

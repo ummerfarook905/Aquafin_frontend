@@ -10,14 +10,14 @@ class CommonAppbar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       leading: IconButton(
         onPressed: () =>Get.back(), 
-        icon: const Icon(Icons.arrow_back, color: Colors.white)
+        icon: const Icon(Icons.arrow_back, color: Colors.black)
         ),
         title: Text(
           title,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
     );
