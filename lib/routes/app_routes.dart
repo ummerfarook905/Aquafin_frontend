@@ -20,5 +20,6 @@ class AppRoutes {
     GetPage(name: '/account', page: () => AccountScreen()),
     GetPage(name: '/profile', page: () => ProfileScreen()),
     GetPage(name: '/address', page: () => AddressScreen()),
+    GetPage(name: '/product', page: () => ProductScreen()),
   ];
 }

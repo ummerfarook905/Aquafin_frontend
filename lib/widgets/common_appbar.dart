@@ -12,7 +12,7 @@ class CommonAppbar extends StatelessWidget implements PreferredSizeWidget{
     return AppBar(
       backgroundColor: Colors.white,
       leading: IconButton(
-        onPressed: () =>Get.back(), 
+        onPressed: () => Get.back(), 
         icon: const Icon(Icons.arrow_back, color: Colors.black)
         ),
         title: Text(
