@@ -1,4 +1,5 @@
 import 'package:aquafin_frontend/controllers/cart_controller.dart';
+import 'package:aquafin_frontend/widgets/add_address_form.dart';
 import 'package:aquafin_frontend/widgets/cart_card.dart';
 import 'package:aquafin_frontend/widgets/common_appbar.dart';
 import 'package:aquafin_frontend/widgets/gradient.dart';
@@ -37,7 +38,9 @@ class CartScreen extends StatelessWidget {
                   ),
                   IconButton(
                   icon: const Icon(Icons.add_circle_outline, color: Colors.blue),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.dialog(AddAddressForm());
+                  },
                 )
               ],
             ),
