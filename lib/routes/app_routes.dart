@@ -1,5 +1,6 @@
 import 'package:aquafin_frontend/views/account_screen.dart';
 import 'package:aquafin_frontend/views/address_screen.dart';
+import 'package:aquafin_frontend/views/checkout_screen.dart';
 import 'package:aquafin_frontend/views/contact_screen.dart';
 import 'package:aquafin_frontend/views/home_screen.dart';
 import 'package:aquafin_frontend/views/login_screen.dart';
@@ -14,12 +15,12 @@ class AppRoutes {
   static final List<GetPage> routes = [
     GetPage(name: '/login', page: () => LoginScreen()),
     GetPage(name: '/home', page: () => HomeScreen()),
-    GetPage(name: '/product', page: () => ProductScreen()),
     GetPage(name: '/signup', page: () => SignupScreen()),
     GetPage(name: '/contact', page: () => ContactScreen()),
     GetPage(name: '/account', page: () => AccountScreen()),
     GetPage(name: '/profile', page: () => ProfileScreen()),
     GetPage(name: '/address', page: () => AddressScreen()),
     GetPage(name: '/product', page: () => ProductScreen()),
+    GetPage(name: '/checkout', page: () => CheckoutScreen()),
   ];
 }
