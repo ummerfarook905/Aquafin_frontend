@@ -1,5 +1,4 @@
 import 'package:aquafin_frontend/controllers/cart_controller.dart';
-import 'package:aquafin_frontend/views/checkout_screen.dart';
 import 'package:aquafin_frontend/widgets/add_address_form.dart';
 import 'package:aquafin_frontend/widgets/cart_card.dart';
 import 'package:aquafin_frontend/widgets/common_appbar.dart';
