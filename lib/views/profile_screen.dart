@@ -17,9 +17,18 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           children: [
             Center(
-              child: Column(
-                children: const [
-                  Icon(Icons.account_circle, size: 100, color: Colors.white),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.account_circle, size: 100, color: Colors.white),
+                  const SizedBox(width: 20),
+                  
+                  GestureDetector(
+                    onTap: (){
+                      controller.toggleEditing();
+                    },
+                    child: const Icon(Icons.edit, size: 28),
+                  ),
                 ],
               ),
             ),
