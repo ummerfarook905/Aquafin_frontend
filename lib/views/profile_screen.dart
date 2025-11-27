@@ -22,12 +22,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   const Icon(Icons.account_circle, size: 100, color: Colors.white),
                   const SizedBox(width: 20),
-                  
-                  GestureDetector(
-                    onTap: (){
-                      controller.toggleEditing();
-                    },
-                    child: const Icon(Icons.edit, size: 28),
+                  IconButton(
+                    icon:
+                        const Icon(Icons.edit, size: 30, color: Colors.white),
+                    onPressed: controller.toggleEditing,
                   ),
                 ],
               ),
@@ -45,10 +43,22 @@ class ProfileScreen extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  buildProfileDetail("Name", user.name),
-                  buildProfileDetail("Mobile no", user.mobile),
-                  buildProfileDetail("Email id", user.email),
-                  buildProfileDetail("DOB", user.dob),
+                  buildProfileDetail("Name", user.name, controller.isEditing.value),
+                  buildProfileDetail("Mobile no", user.mobile, controller.isEditing.value),
+                  buildProfileDetail("Email id", user.email, controller.isEditing.value),
+                  buildProfileDetail("DOB", user.dob, controller.isEditing.value),
+
+                  const SizedBox(height: 20),
+
+                  controller.isEditing.value
+                  ? ElevatedButton(
+                    onPressed: controller.disableEditing,
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                      ), 
+                    child: const Text("Update"))
+                    :const SizedBox(),
                 ],
               );
             }),
@@ -59,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
   }
 
   /// ✅ helper function moved outside build()
-  Widget buildProfileDetail(String title, String value) {
+  Widget buildProfileDetail(String title, String value, bool isEditing) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12),
       child: Column(
