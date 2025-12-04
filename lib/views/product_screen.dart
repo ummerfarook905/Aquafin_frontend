@@ -2,6 +2,7 @@ import 'package:aquafin_frontend/controllers/home_controller.dart';
 import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:aquafin_frontend/widgets/product_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductScreen extends StatelessWidget {
   final HomeController controller = HomeController();
@@ -9,16 +10,8 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final products = controller.getFeaturedProducts();
+    final HomeController controller = Get.put(HomeController());
     return GradientScaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.blue[800],
-      //   title: const Text("Aquafin Store"),
-      //   actions: [
-      //     IconButton(icon: const Icon(Icons.search), onPressed: () {}),
-      //     IconButton(icon: const Icon(Icons.shopping_cart), onPressed: () {}),
-      //   ],
-      // ),
       body: Column(
         children: [
           Padding(
@@ -36,16 +29,6 @@ class ProductScreen extends StatelessWidget {
               ),
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: const [
-          //       Text("All Featured", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          //       Icon(Icons.sort),
-          //     ],
-          //   ),
-          // ),
 
           Expanded(
             child: GridView.builder(
@@ -56,9 +39,9 @@ class ProductScreen extends StatelessWidget {
                 mainAxisSpacing: 10,
                 childAspectRatio: 0.75,
               ), 
-              itemCount: products.length,
+              itemCount: controller.products.length,
               itemBuilder: (context, index) {
-                return ProductCard(product: products[index]);
+                return ProductCard(product: controller.products[index]);
               },
               )
           ),

@@ -1,5 +1,6 @@
 import 'package:aquafin_frontend/controllers/address_controller.dart';
 import 'package:aquafin_frontend/widgets/common_appbar.dart';
+import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,8 +12,7 @@ class AddressScreen extends StatelessWidget {
 
     final AddressController controller = Get.put(AddressController());
 
-    return Scaffold(
-      backgroundColor: Colors.black,
+    return GradientScaffold(
       appBar: const CommonAppbar(title: "Address"),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

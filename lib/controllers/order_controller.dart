@@ -1,8 +1,10 @@
 import 'package:aquafin_frontend/models/order_model.dart';
+import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
 class OrderController extends GetxController{
   var orders = <OrderModel>[].obs;
+  final dio = Dio();
 
   @override
   void onInit() {
@@ -10,31 +12,19 @@ class OrderController extends GetxController{
     fetchOrders();
   }
 
-  void fetchOrders() {
-    var fetchedOrders = [
-      OrderModel(
-        id: "ORD001",
-        date: "2025-10-15",
-        total: 899.0,
-        status: "Delivered",
-        items: ["TripleBetta", "Fish Tank"],
-      ),
-      OrderModel(
-        id: "ORD002",
-        date: "2025-09-30",
-        total: 499.0,
-        status: "Cancelled",
-        items: ["Taiyo Pluss"],
-      ),
-      OrderModel(
-        id: "ORD003",
-        date: "2025-09-10",
-        total: 1299.0,
-        status: "Delivered",
-        items: ["Rid All 3 in 1", "Red Betta"],
-      ),
-    ];
+  Future<void> fetchOrders() async {
+    try {
+      final response = await dio.get("https://37b35100-6d2e-447e-ab8b-968e070baf2c.mock.pstmn.io/orders"); 
 
-    orders.assignAll(fetchedOrders);
+      if (response.statusCode == 200) {
+        List<dynamic> data = response.data;
+
+        orders.value = data
+            .map((json) => OrderModel.fromJson(json))
+            .toList();
+      }
+    } catch (e) {
+      print("Error fetching orders: $e");
+    }
   }
 }

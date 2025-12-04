@@ -12,4 +12,14 @@ class OrderModel {
     required this.status,
     required this.items,
   });
+
+  factory OrderModel.fromJson(Map<String, dynamic> json) {
+    return OrderModel(
+      id: json["id"],
+      date: json["date"],
+      total: (json["total"] as num).toDouble(),
+      status: json["status"],
+      items: List<String>.from(json["items"]),
+    );
+  }
 }

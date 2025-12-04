@@ -1,3 +1,4 @@
+import 'package:aquafin_frontend/views/address_screen.dart';
 import 'package:aquafin_frontend/views/cart_screen.dart';
 import 'package:aquafin_frontend/views/order_screen.dart';
 import 'package:aquafin_frontend/views/product_screen.dart';
@@ -14,6 +15,7 @@ class NavigationController extends GetxController {
     CartScreen(),
     OrderScreen(),
     ProfileScreen(),
+    AddressScreen(),
   ];
 
   final pageTitles = [
