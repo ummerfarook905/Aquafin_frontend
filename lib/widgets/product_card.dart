@@ -14,7 +14,7 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: Image.asset(product.image)
+            child: Image.network(product.image),
           ),
           Padding(
             padding: const EdgeInsets.all(6.0),

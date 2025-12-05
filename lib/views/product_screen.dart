@@ -12,6 +12,7 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final HomeController controller = Get.put(HomeController());
     return GradientScaffold(
+      appBar: AppBar(title: Text("Hello")),
       body: Column(
         children: [
           Padding(
