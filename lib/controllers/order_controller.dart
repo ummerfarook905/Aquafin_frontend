@@ -24,7 +24,7 @@ class OrderController extends GetxController{
             .toList();
       }
     } catch (e) {
-      print("Error fetching orders: $e");
+      // no print
     }
   }
 }

@@ -25,7 +25,7 @@ class ProfileController extends GetxController{
         user.value = UsersModel.fromJson(response.data);
       }
     } catch (e) {
-      print("Error fetching user data: $e");
+      // no print
     }
   }
 

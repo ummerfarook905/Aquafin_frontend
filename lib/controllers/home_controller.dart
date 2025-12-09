@@ -23,7 +23,7 @@ class HomeController extends GetxController{
         products.value = data.map((e) => Product.fromJson(e)).toList();
       }
     } catch (e) {
-      print("Error fetching products: $e");
+      // no print
     }
   }
 }

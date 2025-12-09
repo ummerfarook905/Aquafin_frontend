@@ -1,3 +1,4 @@
+import 'package:aquafin_frontend/controllers/address_controller.dart';
 import 'package:aquafin_frontend/controllers/cart_controller.dart';
 import 'package:aquafin_frontend/widgets/add_address_form.dart';
 import 'package:aquafin_frontend/widgets/cart_card.dart';
@@ -9,6 +10,7 @@ import 'package:get/get.dart';
 class CartScreen extends StatelessWidget {
 
   final CartController controller = Get.put(CartController());
+  final AddressController addressController = Get.put(AddressController());
    CartScreen({super.key});
 
   @override
@@ -25,16 +27,20 @@ class CartScreen extends StatelessWidget {
               children: [
                 const Icon(Icons.location_on, color: Colors.blue),
                 const SizedBox(width: 8),
-                const Expanded(
-                  child: Column(
+                 Expanded(
+                  child: Obx(() {
+                    final addr = addressController.address.value;
+                  return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("Delivery Address",
                           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                       SizedBox(height: 4),
-                      Text("Dinakaran\nfgmail@dinakaran.com"),
+                      Text("${addr?.name ?? 'No Name'}\n${addr?.addressLine ?? ''}"),
                     ],
-                  ),
+                  );
+                  }
+                  )
                   ),
                   IconButton(
                   icon: const Icon(Icons.add_circle_outline, color: Colors.blue),

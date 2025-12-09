@@ -20,7 +20,7 @@ class AddressController extends GetxController{
           address.value = AddressModel.fromJson(response.data);
         }
       } catch (e) {
-        print("Error: $e");
+        // no print
       }
     }
 }

@@ -1,9 +1,14 @@
+import 'package:aquafin_frontend/controllers/payment_controller.dart';
+import 'package:aquafin_frontend/views/payment_done_screen.dart';
 import 'package:aquafin_frontend/widgets/common_appbar.dart';
 import 'package:aquafin_frontend/widgets/gradient.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CheckoutScreen extends StatelessWidget {
-  const CheckoutScreen({super.key});
+  final PaymentController paymentController = Get.put(PaymentController());
+
+  CheckoutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,48 +58,91 @@ class CheckoutScreen extends StatelessWidget {
 
             const SizedBox(height: 15),
 
-            Card(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadiusGeometry.circular(15)
-              ),
-              elevation: 3,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  children: [
-                    Icon(Icons.payment, size: 30, color: Colors.blue,),
-                    const SizedBox(width: 10,),
-                    const Text(
-                      "Card Payment",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                ),
+            GestureDetector(
+              onTap: () {
+                paymentController.selectMethod("card");
+              },
+              child: Obx(() {
+                return Card(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 3,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      children: [
+                        // Payment Icon
+                        Icon(Icons.payment, size: 30, color: Colors.blue),
+
+                        const SizedBox(width: 10),
+
+                        // Text
+                        const Text(
+                          "Card Payment",
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+
+                        Spacer(),
+
+                        // ✅ Check Button (Radio-style)
+                        Icon(
+                          paymentController.selectedMethod.value == "card"
+                              ? Icons.radio_button_checked
+                              : Icons.radio_button_unchecked,
+                          color: Colors.blue,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
             ),
+
 
             const SizedBox(height: 20),
 
-            Card(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadiusGeometry.circular(15)
-              ),
-              elevation: 3,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  children: [
-                    Icon(Icons.attach_money, size: 30, color: Colors.blue,),
-                    const SizedBox(width: 10),
-                    const Text(
-                      "Cash On Delivery",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                ),
+            GestureDetector(
+              onTap: () {
+                paymentController.selectMethod("cash");
+              },
+              child: Obx(() {
+                return Card(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 3,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      children: [
+                        // Payment Icon
+                        Icon(Icons.currency_rupee, size: 30, color: Colors.blue),
+
+                        const SizedBox(width: 10),
+
+                        // Text
+                        const Text(
+                          "Cash On Delivery",
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+
+                        Spacer(),
+
+                        // ✅ Check Button (Radio-style)
+                        Icon(
+                          paymentController.selectedMethod.value == "cash"
+                              ? Icons.radio_button_checked
+                              : Icons.radio_button_unchecked,
+                          color: Colors.blue,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
             ),
             const SizedBox(height: 16),
 
@@ -102,7 +150,11 @@ class CheckoutScreen extends StatelessWidget {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                onPressed: (){}, 
+                onPressed: (){
+                  Get.dialog(
+                    const PaymentDoneScreen()
+                  );
+                }, 
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
